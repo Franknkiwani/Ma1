@@ -559,6 +559,110 @@ button:hover {
         text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 60px #ff00ff;
     }
 }
+/* Prevent scrolling and keep everything within the viewport */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Full height of the viewport */
+    overflow: hidden; /* Prevent page scroll */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the footer sticks to the bottom */
+}
+
+/* Ensure main content does not exceed the viewport height */
+.main-content {
+    flex-grow: 1; /* Takes up the remaining space */
+    height: 100vh; /* Height of the viewport */
+    overflow: hidden; /* Prevent any content overflow */
+    position: relative;
+}
+
+/* Cyberpunk Footer Styling */
+footer {
+    position: fixed; /* Fix the footer to the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111; /* Dark background */
+    color: #00ff99; /* Neon green text */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 255, 153, 0.2); /* Soft neon glow around */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 9999; /* Make sure it's on top */
+}
+
+/* Footer Content */
+.footer-content p {
+    font-size: 1.1rem;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Footer Buttons Container */
+.footer-buttons {
+    display: flex;
+    gap: 50px;
+}
+
+/* Common Button Styling */
+button {
+    padding: 2px 27px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Cashout Button (Green) */
+.cashout-btn {
+    background-color: #00ff99; /* Neon Green */
+    color: black;
+}
+
+/* Cashout History Button (Red) */
+.history-btn {
+    background-color: #ff4444; /* Neon Red */
+    color: white;
+}
+
+/* Neon Glow Animation */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 20px #00ff99;
+    }
+    100% {
+        text-shadow: 0 0 15px #00ff99, 0 0 30px #00ff99, 0 0 60px #00ff99;
+    }
+}
+
+/* Hover Glow Animation */
+@keyframes neonGlowHover {
+    0% {
+        text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    }
+    100% {
+        text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+    }
+}
 
     </style>
 </head>
